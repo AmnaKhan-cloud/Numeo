@@ -1,0 +1,25 @@
+{
+  "name": "permission.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run bddgen && npm run playwright-test",
+    "bddgen": "npx bddgen",
+    "clean": "rmdir /S /Q .features-gen",
+    "playwright-test": "npx playwright test --reporter=html,list --workers 1 --headed"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@cucumber/cucumber": "^12.2.0",
+    "@playwright/test": "^1.56.1",
+    "@types/node": "^24.3.1",
+    "playwright-bdd": "^8.4.1"
+  },
+  "dependencies": {
+    "-": "^0.0.1",
+    "D": "^1.0.0"
+  }
+}
