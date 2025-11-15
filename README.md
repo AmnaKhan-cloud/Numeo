@@ -39,7 +39,7 @@
 6. Run tests: `npx playwright test --headed`
 7. To run a particular test, specify the path or filename.
 8. Jenkins installation requires Java 17 or 21.
-9. To trigger a Jenkins job, click the job button.
+9. To trigger a Jenkins job, click the Build button.
 
 ---
 
