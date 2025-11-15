@@ -29,10 +29,11 @@ Feature: Verify Login functionality
             |                       |                   | Warning: No match for E-Mail Address and/or Password  |
 
 
-    # Product search scenarios
     Scenario Outline: Search for products on account page
         Given User navigates to url
-        When User logs in with username "amna@mailinator.com" and password "Allah12@"
+        When User enter Email "<Username>"
+        When User enter password "<Password>"
+        When User click on login button
         And User enters product name "<ProductName>" in search box
         And User clicks on search button
         Then Search results should contain "<ProductName>"
