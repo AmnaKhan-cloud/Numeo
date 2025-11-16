@@ -27,10 +27,9 @@
 
 ## Project Structure
 
-- **Jenkins:** Integration with Jenkins
+- **Jenkins:** Integration with Jenkins with workflow after commit autonatically run build using hooks and parameters
 - **tests:** Contains all features and JS code
 - **test-results:** Contains all report files
-- Shared Jenkins file for workflow setting with hooks and parameters for live host will show in an interview
 
 ---
 
@@ -43,8 +42,9 @@
 5. Install Cucumber: `npm i -D @cucumber/cucumber@latest`
 6. Run tests: `npx playwright test --headed`
 7. To run a particular test, specify the path or filename.
-8. Jenkins installation requires Java 17 or 21.
+8. Jenkins installation requires Java 17 or 21.Install npm and playwright with job
 9. To trigger a Jenkins job, click the Build button.
+10. Shared jenkins file that show workflow and also show with live host in an interview
 
 ---
 
