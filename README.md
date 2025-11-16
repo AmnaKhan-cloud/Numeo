@@ -18,9 +18,9 @@
   Proper login scenario using [naveenautomationlabs OpenCart login](https://naveenautomationlabs.com/opencart/index.php?route=account/login)
 - **Search bar test:**  
   Search for an item and get its attribute (e.g., Macbook)
-  **Execution of failure test cases only**
-**Retries for falky test**
-**CLI only run new commits changes test**
+- **Execution of failure test cases only**
+- **Retries for falky test**
+ **CLI only run new commits changes test**
   
   
 ---
