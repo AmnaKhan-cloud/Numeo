@@ -25,9 +25,9 @@
 
 Module: Total no of test
 
-Login Tests:10 Open Cart : 2 
+Login Tests:10 Open Cart : 2 Post API :1
 
-TotalModule: 2 Total Test Execution: 14
+TotalModule: 2 Total Test Execution: 13
   
   
 ---
