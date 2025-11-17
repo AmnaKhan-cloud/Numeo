@@ -14,15 +14,6 @@ pipeline {
                     url: 'https://github.com/AmnaKhan-cloud/Numeo.git'
             }
         }
-
-        stage('Verify Node.js') {
-            steps {
-                // Check Node.js and npm are available on agent
-                sh 'node -v'
-                sh 'npm -v'
-            }
-        }
-
         stage('Install Dependencies') {
             steps {
                 // Install project dependencies
