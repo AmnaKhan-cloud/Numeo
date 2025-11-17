@@ -21,7 +21,7 @@
 - **Execution of failure test cases only**
 - **Retries for falky test**
 - **CLI only run new commits changes test**
--**Total Test Coverage**
+- **Total Test Coverage**
 
 Module: Total no of test
 
