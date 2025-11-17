@@ -10,8 +10,8 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Replace with your repo URL and branch
-                git branch: 'main',
-                    url: 'https://github.com/your-username/your-repo.git'
+                git branch: 'master',
+                    url: 'https://github.com/AmnaKhan-cloud/Numeo.git'
             }
         }
 
