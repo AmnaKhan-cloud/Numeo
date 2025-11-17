@@ -1,8 +1,7 @@
 import 'dotenv/config';
 import { test as base } from 'playwright-bdd';
-import { LoginPage } from '../pages/LoginPage.js';
-import { OpenCartPage } from '../pages/OpenCartPage.js';
-
+import { LoginPage } from '../../tests/pages/LoginPage.js';
+import { OpenCartPage } from '../../tests/pages/OpenCartPage.js';
 // helper to create a fixture from a page class
 // Helper to create a page fixture
 const createPageFixture = (PageClass) => async ({ page }, use) => {
@@ -16,4 +15,4 @@ export const test = base.extend({
   pOpenCartPage: createPageFixture(OpenCartPage),
 });
 
-export { test };
+
