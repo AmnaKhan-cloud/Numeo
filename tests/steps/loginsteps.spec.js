@@ -1,46 +1,45 @@
 import { createBdd } from 'playwright-bdd';
-import { test } from '../fixtures/fixture';
+import { testpages } from '../fixtures/fixture';
 import { expect } from '@playwright/test';
 
+const { Given, When, Then } = createBdd(testpages);
 
-const { Given, When, Then } = createBdd(test);
 
-
-Given('User navigate to url', async ({ loginPage }) => {
+Given('User navigate to url', async ({ pLoginPage }) => {
   const url = process.env.baseURL || 'https://naveenautomationlabs.com/opencart/index.php?route=account/login';
   console.log("Navigating to:", url);
-  await loginPage.goto(url);
+  await pLoginPage.goto(url);
 });
-When('User enter Email {string}', async ({ loginPage }, email) => {
-  console.log('DEBUG fixture:', loginPage);
-  await loginPage.enterEmailAddress(email);
+When('User enter Email {string}', async ({ pLoginPage }, email) => {
+  console.log('DEBUG fixture:', pLoginPage);
+  await pLoginPage.enterEmailAddress(email);
 
-});
-
-When('User enter password {string}', async ({ loginPage }, password) => {
-  await loginPage.enterPassword(password);
 });
 
-
-When('User click on login button', async ({ loginPage }) => {
-  await loginPage.clickOnLogin();
+When('User enter password {string}', async ({ pLoginPage }, password) => {
+  await pLoginPage.enterPassword(password);
 });
 
-Then('User should see MyAccount after login', async ({ loginPage }) => {
 
-  await loginPage.verifyLandonHome();
+When('User click on login button', async ({ pLoginPage }) => {
+  await pLoginPage.clickOnLogin();
 });
 
-When('User logs in with environment credentials', async ({ loginPage }) => {
+Then('User should see MyAccount after login', async ({ pLoginPage }) => {
+
+  await pLoginPage.verifyLandonHome();
+});
+
+When('User logs in with environment credentials', async ({ pLoginPage }) => {
   const email = process.env.TEST_EMAIL;
   const password = process.env.TEST_PASSWORD;
   if (!email || !password) throw new Error('TEST_EMAIL and TEST_PASSWORD must be set in environment');
-  await loginPage.login(email, password);
+  await pLoginPage.login(email, password);
 });
 
-Then('User should verify error message contains {string}', { timeout: 20 * 1000 }, async function ({ loginPage }, errorMessage) {
+Then('User should verify error message contains {string}', { timeout: 20 * 1000 }, async function ({ pLoginPage }, errorMessage) {
 
-  await loginPage.verifyErrorContains(errorMessage);
+  await pLoginPage.verifyErrorContains(errorMessage);
 });
 
 

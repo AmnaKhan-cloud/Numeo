@@ -1,2 +1,2 @@
-export { PLoginPage } from './LoginPage.js';
-export { POpenCartPage } from './OpenCartPage.js';
+export { PLoginPage } from '../pages/LoginPage.js';
+export { POpenCartPage } from '../pages/OpenCartPage.js';

@@ -1,80 +1,80 @@
 // Generated from: tests\Feature\login.feature
-import { test } from "../../../tests/fixtures/fixture.js";
+import { testpages as test } from "../../../tests/fixtures/fixture.js";
 
 test.describe('Verify Login functionality', () => {
 
-  test.beforeEach('Background', async ({ Given, loginPage }, testInfo) => { if (testInfo.error) return;
-    await Given('User navigate to url', null, { loginPage }); 
+  test.beforeEach('Background', async ({ Given, pLoginPage }, testInfo) => { if (testInfo.error) return;
+    await Given('User navigate to url', null, { pLoginPage }); 
   });
   
-  test('Successful login with valid credentials', async ({ When, Then, loginPage }) => { 
-    await When('User logs in with environment credentials', null, { loginPage }); 
-    await Then('User should see MyAccount after login', null, { loginPage }); 
+  test('Successful login with valid credentials', async ({ When, Then, pLoginPage }) => { 
+    await When('User logs in with environment credentials', null, { pLoginPage }); 
+    await Then('User should see MyAccount after login', null, { pLoginPage }); 
   });
 
   test.describe('Verify user is not able login with following credentails', () => {
 
-    test('Example #1', async ({ When, Then, loginPage }) => { 
-      await When('User enter Email "wrong@example.com"', null, { loginPage }); 
-      await When('User enter password "somePassword"', null, { loginPage }); 
-      await When('User click on login button', null, { loginPage }); 
-      await Then('User should verify error message contains "Warning: No match for E-Mail Address and/or Password."', null, { loginPage }); 
+    test('Example #1', async ({ When, Then, pLoginPage }) => { 
+      await When('User enter Email "wrong@example.com"', null, { pLoginPage }); 
+      await When('User enter password "somePassword"', null, { pLoginPage }); 
+      await When('User click on login button', null, { pLoginPage }); 
+      await Then('User should verify error message contains "Warning: No match for E-Mail Address and/or Password."', null, { pLoginPage }); 
     });
 
-    test('Example #2', async ({ When, Then, loginPage }) => { 
-      await When('User enter Email "validUser@example.com"', null, { loginPage }); 
-      await When('User enter password "wrongPassword!"', null, { loginPage }); 
-      await When('User click on login button', null, { loginPage }); 
-      await Then('User should verify error message contains "Warning: No match for E-Mail Address and/or Password."', null, { loginPage }); 
+    test('Example #2', async ({ When, Then, pLoginPage }) => { 
+      await When('User enter Email "validUser@example.com"', null, { pLoginPage }); 
+      await When('User enter password "wrongPassword!"', null, { pLoginPage }); 
+      await When('User click on login button', null, { pLoginPage }); 
+      await Then('User should verify error message contains "Warning: No match for E-Mail Address and/or Password."', null, { pLoginPage }); 
     });
 
-    test('Example #3', async ({ When, Then, loginPage }) => { 
-      await When('User enter Email ""', null, { loginPage }); 
-      await When('User enter password "ValidPassword123!"', null, { loginPage }); 
-      await When('User click on login button', null, { loginPage }); 
-      await Then('User should verify error message contains "Warning: No match for E-Mail Address and/or Password"', null, { loginPage }); 
+    test('Example #3', async ({ When, Then, pLoginPage }) => { 
+      await When('User enter Email ""', null, { pLoginPage }); 
+      await When('User enter password "ValidPassword123!"', null, { pLoginPage }); 
+      await When('User click on login button', null, { pLoginPage }); 
+      await Then('User should verify error message contains "Warning: No match for E-Mail Address and/or Password"', null, { pLoginPage }); 
     });
 
-    test('Example #4', async ({ When, Then, loginPage }) => { 
-      await When('User enter Email "validUser@example.com"', null, { loginPage }); 
-      await When('User enter password ""', null, { loginPage }); 
-      await When('User click on login button', null, { loginPage }); 
-      await Then('User should verify error message contains "Warning: No match for E-Mail Address and/or Password"', null, { loginPage }); 
+    test('Example #4', async ({ When, Then, pLoginPage }) => { 
+      await When('User enter Email "validUser@example.com"', null, { pLoginPage }); 
+      await When('User enter password ""', null, { pLoginPage }); 
+      await When('User click on login button', null, { pLoginPage }); 
+      await Then('User should verify error message contains "Warning: No match for E-Mail Address and/or Password"', null, { pLoginPage }); 
     });
 
-    test('Example #5', async ({ When, Then, loginPage }) => { 
-      await When('User enter Email "invalid@example.com"', null, { loginPage }); 
-      await When('User enter password "short"', null, { loginPage }); 
-      await When('User click on login button', null, { loginPage }); 
-      await Then('User should verify error message contains "Warning: No match for E-Mail Address and/or Password"', null, { loginPage }); 
+    test('Example #5', async ({ When, Then, pLoginPage }) => { 
+      await When('User enter Email "invalid@example.com"', null, { pLoginPage }); 
+      await When('User enter password "short"', null, { pLoginPage }); 
+      await When('User click on login button', null, { pLoginPage }); 
+      await Then('User should verify error message contains "Warning: No match for E-Mail Address and/or Password"', null, { pLoginPage }); 
     });
 
-    test('Example #6', async ({ When, Then, loginPage }) => { 
-      await When('User enter Email "testuser@example.com"', null, { loginPage }); 
-      await When('User enter password "123"', null, { loginPage }); 
-      await When('User click on login button', null, { loginPage }); 
-      await Then('User should verify error message contains "Warning: No match for E-Mail Address and/or Password"', null, { loginPage }); 
+    test('Example #6', async ({ When, Then, pLoginPage }) => { 
+      await When('User enter Email "testuser@example.com"', null, { pLoginPage }); 
+      await When('User enter password "123"', null, { pLoginPage }); 
+      await When('User click on login button', null, { pLoginPage }); 
+      await Then('User should verify error message contains "Warning: No match for E-Mail Address and/or Password"', null, { pLoginPage }); 
     });
 
-    test('Example #7', async ({ When, Then, loginPage }) => { 
-      await When('User enter Email "invalidformat"', null, { loginPage }); 
-      await When('User enter password "ValidPassword123!"', null, { loginPage }); 
-      await When('User click on login button', null, { loginPage }); 
-      await Then('User should verify error message contains "Warning: No match for E-Mail Address and/or Password"', null, { loginPage }); 
+    test('Example #7', async ({ When, Then, pLoginPage }) => { 
+      await When('User enter Email "invalidformat"', null, { pLoginPage }); 
+      await When('User enter password "ValidPassword123!"', null, { pLoginPage }); 
+      await When('User click on login button', null, { pLoginPage }); 
+      await Then('User should verify error message contains "Warning: No match for E-Mail Address and/or Password"', null, { pLoginPage }); 
     });
 
-    test('Example #8', async ({ When, Then, loginPage }) => { 
-      await When('User enter Email "validUser@example.com"', null, { loginPage }); 
-      await When('User enter password "wrongpass!"', null, { loginPage }); 
-      await When('User click on login button', null, { loginPage }); 
-      await Then('User should verify error message contains "Warning: No match for E-Mail Address and/or Password"', null, { loginPage }); 
+    test('Example #8', async ({ When, Then, pLoginPage }) => { 
+      await When('User enter Email "validUser@example.com"', null, { pLoginPage }); 
+      await When('User enter password "wrongpass!"', null, { pLoginPage }); 
+      await When('User click on login button', null, { pLoginPage }); 
+      await Then('User should verify error message contains "Warning: No match for E-Mail Address and/or Password"', null, { pLoginPage }); 
     });
 
-    test('Example #9', async ({ When, Then, loginPage }) => { 
-      await When('User enter Email ""', null, { loginPage }); 
-      await When('User enter password ""', null, { loginPage }); 
-      await When('User click on login button', null, { loginPage }); 
-      await Then('User should verify error message contains "Warning: No match for E-Mail Address and/or Password"', null, { loginPage }); 
+    test('Example #9', async ({ When, Then, pLoginPage }) => { 
+      await When('User enter Email ""', null, { pLoginPage }); 
+      await When('User enter password ""', null, { pLoginPage }); 
+      await When('User click on login button', null, { pLoginPage }); 
+      await Then('User should verify error message contains "Warning: No match for E-Mail Address and/or Password"', null, { pLoginPage }); 
     });
 
   });

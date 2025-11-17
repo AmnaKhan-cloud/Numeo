@@ -1,24 +1,24 @@
 // Generated from: tests\Feature\OpenCart.feature
-import { test } from "../../../tests/fixtures/fixture.js";
+import { testpages as test } from "../../../tests/fixtures/fixture.js";
 
 test.describe('OpenCart Search Functionality', () => {
 
   test.describe('Search for a product', () => {
 
-    test('Example #1', async ({ Given, When, Then, And, openCartPage }) => { 
-      await Given('the user is on the OpenCart home page', null, { openCartPage }); 
-      await When('the user enters "iPhone" into the search box', null, { openCartPage }); 
-      await And('clicks on the search button', null, { openCartPage }); 
-      await Then('the search results page should be displayed', null, { openCartPage }); 
-      await Then('the system should show "Products related to iPhone are displayed"', null, { openCartPage }); 
+    test('Example #1', async ({ Given, When, Then, And, pOpenCartPage }) => { 
+      await Given('the user is on the OpenCart home page', null, { pOpenCartPage }); 
+      await When('the user enters "iPhone" into the search box', null, { pOpenCartPage }); 
+      await And('clicks on the search button', null, { pOpenCartPage }); 
+      await Then('the search results page should be displayed', null, { pOpenCartPage }); 
+      await Then('the system should show "Products related to iPhone are displayed"', null, { pOpenCartPage }); 
     });
 
-    test('Example #2', async ({ Given, When, Then, And, openCartPage }) => { 
-      await Given('the user is on the OpenCart home page', null, { openCartPage }); 
-      await When('the user enters "NonExistentProduct123" into the search box', null, { openCartPage }); 
-      await And('clicks on the search button', null, { openCartPage }); 
-      await Then('the search results page should be displayed', null, { openCartPage }); 
-      await Then('the system should show "No matching products message is displayed"', null, { openCartPage }); 
+    test('Example #2', async ({ Given, When, Then, And, pOpenCartPage }) => { 
+      await Given('the user is on the OpenCart home page', null, { pOpenCartPage }); 
+      await When('the user enters "NonExistentProduct123" into the search box', null, { pOpenCartPage }); 
+      await And('clicks on the search button', null, { pOpenCartPage }); 
+      await Then('the search results page should be displayed', null, { pOpenCartPage }); 
+      await Then('the system should show "No matching products message is displayed"', null, { pOpenCartPage }); 
     });
 
   });
