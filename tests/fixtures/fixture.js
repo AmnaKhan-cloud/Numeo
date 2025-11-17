@@ -5,16 +5,15 @@ import { OpenCartPage } from '../pages/OpenCartPage.js';
 
 // helper to create a fixture from a page class
 // Helper to create a page fixture
-const test = base.extend({
-  loginPage: async ({ page }, use) => {
-    const loginPage = new PLoginPage(page);
-    await use(loginPage);
-  },
-  openCartPage: async ({ page }, use) => {
-    const openCartPage = new POpenCartPage(page);
-    await use(openCartPage);
-  },
+const createPageFixture = (PageClass) => async ({ page }, use) => {
+  const pageObject = new PageClass(page);
+  await use(pageObject);
+};
+
+// Extend Playwright-BDD test with our page fixtures
+export const test = base.extend({
+  pLoginPage: createPageFixture(LoginPage),
+  pOpenCartPage: createPageFixture(OpenCartPage),
 });
 
 export { test };
-console.log("pages.js loaded");
