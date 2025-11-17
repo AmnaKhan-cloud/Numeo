@@ -11,6 +11,11 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
+                bat 'npm init -y'
+            }
+        }
+        stage('Install Dependencies') {
+            steps {
                 bat 'npm install'
             }
         }
