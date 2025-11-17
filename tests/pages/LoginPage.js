@@ -1,4 +1,4 @@
-const { expect } = require('@playwright/test');
+import { expect } from '@playwright/test';
 
 export class PLoginPage {
 
@@ -11,10 +11,7 @@ export class PLoginPage {
     this.toast1 = page.getByText('Warning: No match for E-Mail Address and/or Password.')
     this.toast = page.locator('div.alert-danger'); // dynamic error messages
     this.user = page.locator('h2').filter({ hasText: 'My Account' });
-    this.searchBox = page.locator('input[name="search"]');
-    this.searchButton = page.locator('button.btn-default[type="button"]');
-    this.searchResults = page.locator('div.product-layout .caption h4 a');
-    this.pageHeading = page.locator('h2');
+
 
     // Optional failure message (if used on forms)
     this.failureMessage = page.locator("mat-error[role='alert']");
@@ -26,6 +23,15 @@ export class PLoginPage {
   async goto(url) {
     await this.page.goto(url);
 
+  }
+
+  // convenient helper to perform full login flow
+  async login(email, password, url = 'https://demo.opencart.com/index.php?route=account/login') {
+    await this.goto(url);
+    await this.enterEmailAddress(email);
+    await this.enterPassword(password);
+    await this.clickOnLogin();
+    await this.verifyLandonHome();
   }
   async enterEmailAddress(emailAddress) {
     await this.email_box.fill(emailAddress);

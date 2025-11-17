@@ -1,26 +1,20 @@
+import 'dotenv/config';
 import { test as base } from 'playwright-bdd';
-import * as Pages from './pages.js';
-
-console.log("Pages imported:", Pages);           // check what was imported
-console.log("Type of Pages.PLoginPage:", typeof Pages.PLoginPage); // should be 'function'
+import { LoginPage } from '../pages/LoginPage.js';
+import { OpenCartPage } from '../pages/OpenCartPage.js';
 
 // helper to create a fixture from a page class
-const createTestFunction = (PageClass) => async ({ page }, use) => {
-  await use(new PageClass(page));
-};
-
-// extend the base test with your page objects
-export const test = base.extend({
-  pLoginPage: createTestFunction(Pages.PLoginPage), // use Pages.PLoginPage directly
+// Helper to create a page fixture
+const test = base.extend({
+  loginPage: async ({ page }, use) => {
+    const loginPage = new PLoginPage(page);
+    await use(loginPage);
+  },
+  openCartPage: async ({ page }, use) => {
+    const openCartPage = new POpenCartPage(page);
+    await use(openCartPage);
+  },
 });
-/*
-console.log("Pages imported:", Pages);
-console.log("Type of PLoginPage:", Pages.typeofPLoginPage);
-const createTestFunction = (PageClass) => async ({ page }, use) => {
-  await use(new PageClass(page));
-};
-export const test = base.extend({
-  pLoginPage: createTestFunction(Pages.PLoginPage),
 
-  });
-*/
+export { test };
+console.log("pages.js loaded");

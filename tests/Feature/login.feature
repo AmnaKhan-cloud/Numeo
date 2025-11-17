@@ -4,9 +4,7 @@ Feature: Verify Login functionality
         Given User navigate to url
 
     Scenario: Successful login with valid credentials
-        When User enter Email "amna@mailinator.com"
-        When User enter password "Allah12@"
-        When User click on login button
+        When User logs in with environment credentials
         Then User should see MyAccount after login
 
     Scenario Outline: Verify user is not able login with following credentails
@@ -29,20 +27,7 @@ Feature: Verify Login functionality
             |                       |                   | Warning: No match for E-Mail Address and/or Password  |
 
 
-    Scenario Outline: Search for products on account page
-        Given User navigates to url
-        When User enter Email "<Username>"
-        When User enter password "<Password>"
-        When User click on login button
-        And User enters product name "<ProductName>" in search box
-        And User clicks on search button
-        Then Search results should contain "<ProductName>"
 
-        Examples:
-            | ProductName |
-            | Macbook     |
-            | iMac        |
-            | Samsung     |
 
 
 

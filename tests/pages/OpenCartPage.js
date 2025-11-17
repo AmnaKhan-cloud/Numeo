@@ -1,6 +1,6 @@
-/*const { expect } = require('@playwright/test');
+import { expect } from '@playwright/test';
 
-class OpenCartPage {
+export class POpenCartPage {
     constructor(page) {
         this.page = page;
         this.searchBox = page.locator('input[name="search"]');
@@ -9,7 +9,10 @@ class OpenCartPage {
         this.pageHeading = page.locator('h2');
     }
 
-
+    async goto(url = 'https://demo.opencart.com') {
+        await this.page.goto(url);
+        await this.page.waitForLoadState('networkidle');
+    }
 
     async enterSearchText(productName) {
         await this.searchBox.fill(productName);
@@ -24,4 +27,3 @@ class OpenCartPage {
         return this.searchResults.allTextContents();
     }
 }
-*/
