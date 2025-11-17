@@ -4,9 +4,8 @@ import { expect } from '@playwright/test';
 
 
 
-When('User enters product name {string} in search box', async function (productName) {
-    await pLoginPage.enterSearchText(productName);
-
+When('clicks on the search button', async ({ pOpenCartPage }) => {
+    await pOpenCartPage.clickSearchButton();
 });
 
 When('User clicks on search button', async function () {
